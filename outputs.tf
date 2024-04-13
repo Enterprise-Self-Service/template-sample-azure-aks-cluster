@@ -7,17 +7,17 @@ output "kubernetes_cluster_name" {
 }
 
 output "host" {
-    value = data.azurerm_kubernetes_cluster.credentials.kube_config.0.host
+    value = nonsensitive(data.azurerm_kubernetes_cluster.credentials.kube_config.0.host)
 }
 
 output "client_certificate" {
-    value = data.azurerm_kubernetes_cluster.credentials.kube_config.0.client_certificate
+    value = nonsensitive(data.azurerm_kubernetes_cluster.credentials.kube_config.0.client_certificate)
 }
 
 output "client_key" {
-    value = data.azurerm_kubernetes_cluster.credentials.kube_config.0.client_key
+    value = nonsensitive(data.azurerm_kubernetes_cluster.credentials.kube_config.0.client_key)
 }
 
 output "cluster_ca_certificate" {
-    value = data.azurerm_kubernetes_cluster.credentials.kube_config.0.cluster_ca_certificate
+    value = nonsensitive(data.azurerm_kubernetes_cluster.credentials.kube_config.0.cluster_ca_certificate)
 }
