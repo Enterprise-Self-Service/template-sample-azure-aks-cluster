@@ -22,3 +22,7 @@ resource "azurerm_kubernetes_cluster" "default" {
 
 
 
+data "azurerm_kubernetes_cluster" "credentials" {
+  name                = azurerm_kubernetes_cluster.default.name
+  resource_group_name = azurerm_resource_group.default.name
+}
